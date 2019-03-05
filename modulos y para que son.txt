@@ -1,0 +1,27 @@
+express: framework para backend
+express-handlebars: es la integracion de motor de plantillas handlebars en express esta tambien jade ejs etc.
+express-session: administra las sesiones de nuestra app para autenticar a un usuario
+mysql: es un modulo de npm para conectarnos a la BD, este modulo no es la BD, tan solo sirve para conectarnos y hacer consultas
+express-mysql-session: este modulo almacenara las sesiones en la BD, en lugar del servidor esto es ideal cuando la aplicacion este en produccion
+morgan:(middleware) permite crear logs o mensajes de que es lo que las aplicaciones clientes estan pidiendo al servidor
+bcryptjs: este modulo lo usaremos para cifrar las contraseñas de los usuarios antes de guardarlos en la BD
+passport:es un modulo para autenticar, y manejar el proceso de login de un usuario en nuestra aplicacion
+passport-local: es un complemento de passport para autenticar a los usuarios con nuestra propia BD
+timeago.js: convierte los timestamps o fechas de la BD en un formato de 2 minutes ago, 2 hours ago, etc.
+connect-flash: lo usaremos para mostrar mensajes de error y exito cuando el usuario realice una operacion
+express-validator: es un modulo para validar los datos que el usuario nos envia desde la aplicacion cliente
+------------------------------------------------------------------------------------
+CARPETAS:
+src: aqui ira todo el codigo 
+routes: iran todas las rutas
+	-index.js: sera utilizado para almacenar todas las rutas principales de la app
+	-authentication.js se autenticaran las rutas de los usuarios, como login o sign up
+	-links.js: almacena los enlaces, eliminarlos, listarlos etc.
+partials: son pedazos de codigo que vamos a estar reutilizando
+
+
+----------------------------------------------------------------------------------
+ARCHIVOS:
+index.js: es el archivo que arrancara la aplicacion
+database.js: tendra la conexion con mysql 
+keys.js: se guardaran las posible palabras claves como el numero de puerto, la conexion a la BD, contraseña direecion y demas
