@@ -48,4 +48,4 @@ app.use(express.static(path.join(__dirname, 'public')))//especifica donde esta l
 app.listen(app.get('port'), () => {
     console.log('servidor en el puerto', app.get('port'));
 })
-//(32:30)
+//(53:30)
