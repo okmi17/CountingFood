@@ -5,17 +5,17 @@ USE restaurante;
 create table EMPLEADO
 (
    IDENTIFICACION       int not null,
-   NOMBRE               varchar(100) not null,
-   APELLIDO             varchar(100) not null,
-   EDAD                 int not null,
-   FECHADENACIMIENTO    date not null,
-   CORREO               varchar(100) not null,
-   SUELDOBASICO         decimal not null,
-   CONTRASENA           varchar(100) not null,
-   PENSIONES            varchar(100) not null,
-   EPS                  varchar(100) not null,
+   NOMBRE               varchar(100)  null,
+   APELLIDO             varchar(100)  null,
+   EDAD                 int  null,
+   FECHADENACIMIENTO    date  null,
+   CORREO               varchar(100)  null,
+   SUELDOBASICO         decimal  null,
+   CONTRASENA           varchar(100)  null,
+   PENSIONES            varchar(100)  null,
+   EPS                  varchar(100)  null,
    CARGO                varchar(100) not null,
-   FECHAINGRESO         date not null,
+   FECHAINGRESO         date  null,
    FOTO                 varchar(1024),
    primary key (IDENTIFICACION, CARGO)
 );

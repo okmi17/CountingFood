@@ -1,0 +1,40 @@
+[33mcommit f51f7215cfcdbe397f8c3ef98e1b90a2ee6ae070[m[33m ([m[1;36mHEAD -> [m[1;32mLoginUser[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Ojtinjacar <Ojtinjacar@unal.edu.co>
+Date:   Wed Mar 6 20:01:22 2019 -0500
+
+    Login
+    
+    Login
+
+[33mcommit 31401630fd1afb451e7099309d873615c273070c[m
+Author: Ojtinjacar <Ojtinjacar@unal.edu.co>
+Date:   Wed Mar 6 20:00:33 2019 -0500
+
+    qqqq
+    
+    aaaaaa
+
+[33mcommit 08a7e7d1c43209f440df552af227d82ad07a98ce[m
+Merge: fb0f4c7 3d7b5d4
+Author: okmisantos <corkisantos@gmail.com>
+Date:   Wed Mar 6 00:42:56 2019 -0500
+
+    bd conectada
+
+[33mcommit fb0f4c7edd6afa7923b3595e5b4cdf2163473c71[m
+Author: okmisantos <corkisantos@gmail.com>
+Date:   Tue Mar 5 23:33:43 2019 -0500
+
+    oscar jode mucho
+
+[33mcommit 3d7b5d45e6de4565f0c3d12a2d0e5e73cf7b1de3[m
+Author: Ojtinjacar <Ojtinjacar@unal.edu.co>
+Date:   Tue Mar 5 17:02:29 2019 -0500
+
+    Add files via upload
+
+[33mcommit c741878550f6909c556a80af7ca910efbf1986fd[m
+Author: okmisantos <corkisantos@gmail.com>
+Date:   Tue Mar 5 08:57:49 2019 -0500
+
+    ya esta montado el server ahora falta la BD

@@ -9,12 +9,12 @@ router.get('/Login',(req,res)=>{
 });
     
 router.post('/Login', async (req,res)=>{
-    const {User, Password} = req.body;
+    const {IDENTIFICACION, CARGO} = req.body;
     const LoginUser = {
-        User,
-        Password
+        IDENTIFICACION,
+        CARGO
     };
-    await pool.query('INSERT INTO Usuario set ?',[LoginUser]);
+    await pool.query('INSERT INTO EMPLEADO set ?',[LoginUser]);
     res.send('reiceved');   
 });
 /*Toca arreglar esto*/
