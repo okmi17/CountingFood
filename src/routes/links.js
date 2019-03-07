@@ -17,5 +17,5 @@ router.post('/Login', async (req,res)=>{
     await pool.query('INSERT INTO Usuario set ?',[LoginUser]);
     res.send('reiceved');   
 });
-
+/*Toca arreglar esto*/
 module.exports = router;
