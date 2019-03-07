@@ -1,0 +1,78 @@
+<div class="navbar-fixed">
+    <nav class="red darken-3">
+        <div class="nav-wrapper container">
+            <a class="brand-logo">Crear Empleado</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+            </ul>
+        </div>
+    </nav>
+</div>
+<style>
+    #firstDiv {
+        margin-top: 50px
+    }
+</style>
+<form action="/links/CreateUser" method="POST">
+<div class="row container" id="firstDiv">
+    <div class="input-field col s6">
+        <input type="text" name="Identificacion" class="validate">
+        <label for="Identificación">Identificación</label>
+
+    </div>
+    <div class="input-field col s6">
+        <input type="password" name="Contrasena" class="validate">
+        <label for="password">Password</label>
+
+    </div>
+    <div class="input-field col s4">
+        <input type="text" name="Nombre" class="validate">
+        <label for="Nombres">Nombres</label>
+    </div>
+    <div class="input-field col s4">
+        <input type="text" name="Apellido" class="validate">
+        <label for="Apellidos">Apellidos</label>
+    </div>
+    <div class="input-field col s4">
+        <input type="text" name="FechadeNacimiento" class="datepicker">
+        <label for="Fecha de Nacimiento">Fecha de Nacimiento</label>
+    </div>
+    <div class="input-field col s4">
+        <input type="text" name="Edad" class="validate">
+        <label for="Edad">Edad</label>
+    </div>
+    <div class="input-field col s4">
+        <input type="email" name="Correo" class="validate">
+        <label for="Correo">Correo</label>
+    </div>
+    <div class="input-field col s4">
+        <input type="text" name="SueldoBasico" class="validate">
+        <label for="Sueldo">Sueldo</label>
+    </div>
+    <div class="input-field col s4">
+        <input type="text" name="Pensiones" class="validate">
+        <label for="Pensiones">Pensiones</label>
+    </div>
+    <div class="input-field col s4">
+        <input type="text" name="Cesantias" class="validate">
+        <label for="Cesantias">Cesantias</label>
+    </div>
+    <div class="input-field col s4">
+        <input type="text" name="EPS" class="validate">
+        <label for="EPS">EPS</label>
+    </div>
+    <div class="input-field col s4">
+        <input type="text" name="Cargo" class="validate">
+        <label for="Cargo">Cargo</label>
+    </div>
+    <div class="input-field col s4">
+        <input type="text"  class="datepicker" name="FechaIngreso" id="fechaingreso">
+        <label for="Fecha de Ingreso">Fecha de Ingreso</label>
+    </div>
+</div>
+<div class="row container center-align">
+    <div class="col s12">
+        <button class="waves-effect waves-light btn red darken-4" type="submit">Crear Empleado</button>
+    </div>
+</div>
+</form> 
+</script>

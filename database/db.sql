@@ -1,6 +1,6 @@
-CREATE DATABASE restaurante;
+CREATE DATABASE Restaurante;
 
-USE restaurante;
+USE Restaurante;
 
 create table EMPLEADO
 (
@@ -16,7 +16,7 @@ create table EMPLEADO
    EPS                  varchar(100)  null,
    CARGO                varchar(100) not null,
    FECHAINGRESO         date  null,
-   FOTO                 varchar(1024),
+   CESANTIAS            varchar(100),
    primary key (IDENTIFICACION, CARGO)
 );
 
