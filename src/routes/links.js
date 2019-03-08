@@ -12,6 +12,8 @@ router.get('/CreateUser',(req,res)=>{
     res.render('links/CreateUser');
 });
 
+
+
 router.post('/Login', async (req,res)=>{
     const {IDENTIFICACION, CARGO} = req.body;
     const LoginUser = {
@@ -60,5 +62,9 @@ router.post('/CreateUser', async (req,res)=>{
     res.send('reiceved');   
 });
 
-/*Toca arreglar esto*/
+router.get('/ListEmployees',async (req,res) => {
+    const empleados =  await pool.query('SELECT * FROM empleado');
+    console.log(empleados); 
+    res.render("links/ListEmployees",{empleados: empleados}); 
+});
 module.exports = router;

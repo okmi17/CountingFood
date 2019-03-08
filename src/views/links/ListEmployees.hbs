@@ -1,0 +1,103 @@
+<style>
+    #firstDiv {
+        margin-top: 50px;
+        margin-left: 20%;
+    }
+</style>
+
+<div class="navbar-fixed">
+    <nav class="red darken-4">
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo left ">Lista de Empleados</a>
+            <ul class="right hide-on-med-and-down ">
+                <li><a href="menuPrincipal.html">MENÚ PRINCIPAL</a></li>
+                <li><a href="/links/CreateUser">AÑADIR EMPLEADO</a></li>
+                <li><a href="/links/Login">CERRAR SESIÓN</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div class="row">
+    <div class="col s7" id="firstDiv">
+        <table class="bordered highlight centered">
+            <thead>
+                <tr>
+                    <th>Identificación</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {{#each empleados}}
+                <tr>
+                    <td class="center">{{IDENTIFICACION}}</td>
+                    <td class="center">{{NOMBRE}}</td>
+                    <td class="center">{{APELLIDO}}</td>
+                    <td class="center"><a href="#modal1"
+                            class="waves-effect waves-light btn red darken-4  modal-trigger">Ver Más</a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <div class="navbar-fixed">
+            <nav class="red darken-4">
+                <div class="nav-wrapper container">
+                    <a class="brand-logo left ">Nombre del Empleado</a>
+            </nav>
+        </div>
+
+        <table class=" bordered highlight centered">
+                        <tbody>
+                            <tr>
+                                <td>Identificación:</td>
+                                <td class="center">Holaaaaa</td>
+                            </tr>
+                            <tr>
+                                <td>Edad:</td>
+                                <td class="center">Holaaaaaaa</td>
+                            </tr>
+                            <tr>
+                                <td>Fecha de Nacimiento:</td>
+                                <td class="center">Holaaaaaaa</td>
+                            </tr>
+                            <tr>
+                                <td>Correo:</td>
+                                <td class="center">Holaaaaaaa</td>
+                            </tr>
+                            <tr>
+                                <td>Sueldo:</td>
+                                <td class="center">Holaaaaaaa</td>
+                            </tr>
+                            <tr>
+                                <td>Pensiones:</td>
+                                <td class="center">Holaaaaaaa</td>
+                            </tr>
+                            <tr>
+                                <td>Cesantias:</td>
+                                <td class="center">Holaaaaaaa</td>
+                            </tr>
+                            <tr>
+                                <td>EPS:</td>
+                                <td class="center">Holaaaaaaa</td>
+                            </tr>
+                            <tr>
+                                <td>Fecha de Ingreso:</td>
+                                <td class="center">Holaaaaaaa</td>
+                            </tr>
+
+
+                        </tbody>
+                        </table>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+                </div>
+        </div>

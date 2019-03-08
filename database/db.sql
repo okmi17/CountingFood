@@ -16,7 +16,7 @@ create table EMPLEADO
    EPS                  varchar(100)  null,
    CARGO                varchar(100) not null,
    FECHAINGRESO         date  null,
-   CESANTIAS            varchar(100),
+   CESANTIAS            varchar(100) null,
    primary key (IDENTIFICACION, CARGO)
 );
 
