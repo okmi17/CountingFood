@@ -19,85 +19,77 @@
 </div>
 <div class="row">
     <div class="col s7" id="firstDiv">
-        <table class="bordered highlight centered">
-            <thead>
-                <tr>
-                    <th>Identificación</th>
-                    <th>Nombres</th>
-                    <th>Apellidos</th>
-                    <th></th>
-                </tr>
-            </thead>
+        <ul class="collapsible" data-collapsible="accordion" action="/links/ListEmployees" method="POST">
+            {{#each empleados}}
+            <li>
+                <div class="collapsible-header"><i class="material-icons">person</i>{{NOMBRE}}
+                    {{APELLIDO}}
+                </div>
+                <div class="collapsible-body">
+                    <span>
+                        <table class=" bordered highlight centered">
+                            <tbody>
+                                <tr>
+                                    <td>Identificación:</td>
+                                    <td class="center">{{IDENTIFICACION}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Edad:</td>
+                                    <td class="center">{{EDAD}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Fecha de Nacimiento:</td>
+                                    <td class="center">{{FECHADENACIMIENTO}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Correo:</td>
+                                    <td class="center">{{CORREO}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Sueldo:</td>
+                                    <td class="center">{{SUELDOBASICO}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Pensiones:</td>
+                                    <td class="center">{{PENSIONES}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Cesantias:</td>
+                                    <td class="center">{{CESANTIAS}}</td>
+                                </tr>
+                                <tr>
+                                    <td>EPS:</td>
+                                    <td class="center">{{EPS}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Fecha de Ingreso:</td>
+                                    <td class="center">{{FECHAINGRESO}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="row"></div>
+                        <div class="col s6 center">
+                            <a href="/links/Edit/{{IDENTIFICACION}}" class="waves-effect waves-light btn red darken-4" type="submit">Modificar</a>
+                        </div>
+                        <div class="col s6 center">
+                            <a href="/links/Delete/{{IDENTIFICACION}}"
+                                class="waves-effect waves-light btn red darken-4">Eliminar</a>
+                        </div>
+                        <div class="row"></div>
 
-            <tbody>
-                {{#each empleados}}
-                <tr>
-                    <td class="center">{{IDENTIFICACION}}</td>
-                    <td class="center">{{NOMBRE}}</td>
-                    <td class="center">{{APELLIDO}}</td>
-                    <td class="center"><a href="#modal1"
-                            class="waves-effect waves-light btn red darken-4  modal-trigger">Ver Más</a></td>
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>
+                    </span>
+                </div>
+            </li>
+            {{else}}
+            <div class="collapsible-header"><i class="material-icons">add</i>No tienes ningun empleado creado :(
+            </div>
+            <div class="row"></div>
+            <div class="col s12 center">
+                <a href="/links/CreateUser" class="waves-effect waves-light btn red darken-4">¡Crea Uno!</a>
+            </div>
+
+            {{/each}}
+        </ul>
     </div>
 </div>
-
 <!-- Modal Structure -->
-<div id="modal1" class="modal">
-    <div class="modal-content">
-        <div class="navbar-fixed">
-            <nav class="red darken-4">
-                <div class="nav-wrapper container">
-                    <a class="brand-logo left ">Nombre del Empleado</a>
-            </nav>
-        </div>
-
-        <table class=" bordered highlight centered">
-                        <tbody>
-                            <tr>
-                                <td>Identificación:</td>
-                                <td class="center">Holaaaaa</td>
-                            </tr>
-                            <tr>
-                                <td>Edad:</td>
-                                <td class="center">Holaaaaaaa</td>
-                            </tr>
-                            <tr>
-                                <td>Fecha de Nacimiento:</td>
-                                <td class="center">Holaaaaaaa</td>
-                            </tr>
-                            <tr>
-                                <td>Correo:</td>
-                                <td class="center">Holaaaaaaa</td>
-                            </tr>
-                            <tr>
-                                <td>Sueldo:</td>
-                                <td class="center">Holaaaaaaa</td>
-                            </tr>
-                            <tr>
-                                <td>Pensiones:</td>
-                                <td class="center">Holaaaaaaa</td>
-                            </tr>
-                            <tr>
-                                <td>Cesantias:</td>
-                                <td class="center">Holaaaaaaa</td>
-                            </tr>
-                            <tr>
-                                <td>EPS:</td>
-                                <td class="center">Holaaaaaaa</td>
-                            </tr>
-                            <tr>
-                                <td>Fecha de Ingreso:</td>
-                                <td class="center">Holaaaaaaa</td>
-                            </tr>
-
-
-                        </tbody>
-                        </table>
-                </div>
-                <div class="modal-footer">
-                    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
-                </div>
-        </div>
