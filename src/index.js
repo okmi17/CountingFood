@@ -4,7 +4,10 @@ const morgan = require('morgan');
 const exphbs = require('express-handlebars');
 //este modulo sera para poder configurar el engine de handlebars  y decir donde va a estar la carpeta de layouts 
 const path = require('path');
-
+const flash = require('connect-flash');//este modulo nos permite enviar mensajes a diferentes vistas y es un midleware
+const session = require('express-session');//este modulo es indispensable para usar connect-flash, la session te almacena los datos en el servidor aunque tambien se puede hacer en la BD
+const MySQLStore = require('express-mysql-session');//para usar flash y para usar la sesion de express-session, asi podremos guardar la sesion en la BD
+const { database } = require('./keys');
 //inicializacion
 const app = express();//app contiene a express cuando este se ejecuta
 
@@ -26,12 +29,26 @@ app.engine('.hbs', exphbs({
 //utilizamos handlebars
 app.set('view engine', '.hbs');
 
-//middlewares: son funciones que se ejecutan cada vez que un usuario envia una peticion al server, un middleware es el viejo morgan
+//middlewares: son funciones que se ejecutan cada vez que un usuario envia una peticion al server, 
+//(1:59:22)
+app.use(session({
+    secret:'sesionDelFlash',
+    resave:false,
+    saveUninitialized: false,
+    store: new MySQLStore(database)
+}))
+//(1:54:00)
+app.use(flash())
+//un middleware es el viejo morgan
 app.use(morgan('dev'))//el argumento 'dev' es para que muestre un determinado tipo de mensajes por consola
 app.use(express.urlencoded({extended:false}))//sirve para poder aceptar los datos que me envien los usuarios, el extended :false sirve para indicar que solo voy a aceptar datos sencillos como cadenas de texto y asi que no voy a aceptar imagenes
 app.use(express.json())//mas adelante se puede quitar esta linea de codigo
+
+
+
 //variables globales
 app.use((req, res,next)=>{
+    app.locals.mensaje = req.flash('mensaje');
     next();//toma la peticion del usuario despues la devolucion del server y despues se sigue ejecutando el resto del codigo 
 })
 
@@ -48,4 +65,4 @@ app.use(express.static(path.join(__dirname, 'public')))//especifica donde esta l
 app.listen(app.get('port'), () => {
     console.log('servidor en el puerto', app.get('port'));
 })
-//(53:30)
+//(53:30) donde quede

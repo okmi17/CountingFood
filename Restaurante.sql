@@ -136,7 +136,7 @@ create table PLATO
 /*==============================================================*/
 create table PLATOPRODUCTO
 (
-   IDPRODUCTO           varchar(30) not null,
+   IDPRODUCTO           int not null,
    IDPLATO              int not null,
    CANTIDADPORCION      decimal not null,
    primary key (IDPRODUCTO, IDPLATO)
@@ -159,7 +159,7 @@ create table POSEER
 /*==============================================================*/
 create table PRODUCTO
 (
-   IDPRODUCTO           varchar(30) not null,
+   IDPRODUCTO           int not null,
    NOMBREPRODUCTO       varchar(30) not null,
    TIPOPRODUCTO         varchar(100) not null,
    DESCRIPCIONPRODUCTO  varchar(100) not null,
