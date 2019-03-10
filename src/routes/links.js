@@ -111,9 +111,6 @@ router.post('/edit/:id', async (req,res)=>{
   
 });
 
-module.exports = router;
-const pool = require('../database')
-
 
 router.get('/inventario', async (req, res) => {
     const productos = await pool.query('SELECT * FROM PRODUCTO');
@@ -122,8 +119,6 @@ router.get('/inventario', async (req, res) => {
     res.render('links/inventario', { productos });
 
 })
-
-
 
 router.post('/inventario', async (req, res) => {
 

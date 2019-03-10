@@ -64,5 +64,5 @@ app.use(express.static(path.join(__dirname, 'public')))//especifica donde esta l
 //Starting the Server
 app.listen(app.get('port'), () => {
     console.log('servidor en el puerto', app.get('port'));
-})
+});
 //(53:30) donde quede

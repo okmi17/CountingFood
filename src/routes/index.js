@@ -1,9 +1,9 @@
 const express = require('express');
-const router = express.Router()
+const router = express.Router();
 
 //defino una ruta
 router.get('/',(req,res)=>{
-    res.send('oscar es un remarica');//recuerde usar las rutas en el index principal
+    res.send('Ok');//recuerde usar las rutas en el index principal
 })
 
 
