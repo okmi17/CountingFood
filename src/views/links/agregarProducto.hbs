@@ -1,0 +1,57 @@
+<div class="navbar-fixed">
+    <nav class="red darken-3">
+        <div class="nav-wrapper container">
+            <a class="brand-logo">Agregar Productos</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/links/navMenuPrincipal">Menu Principal</a></li>
+                <li><a href="/links/navInventario">Inventario</a></li>
+                <li><a href="loginUsuario.html">Cerrar Sesion</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+{{!--1:04:35--}}
+<div class="row">
+    <form action="/links/agregarProducto" method="POST" class="col s12">
+        <div class="row container" id="primerDiv">
+            <div class="col s6">
+                <label for="nombre del producto">Nombre del Producto</label>
+                <input type="text" class="validate" id="nombreproducto" name="NOMBREPRODUCTO">
+            </div>
+            <div class="col s6">
+                <label for="tipo de producto">Tipo de producto</label>
+                <input type="text" class="validate" id="tipo" name="TIPOPRODUCTO">
+            </div>
+        </div>
+        <div class="row container">
+            <div class="col s6">
+                <label for="Costo">Costo</label>
+                <input type="number" class="validate" id="costoProducto" name="COSTO">
+            </div>
+            <div class="col s6">
+                <label for="cantidad">Cantidad</label>
+                <input type="number" class="validate" id="cantidad" name="CANTIDADINVENTARIO">
+            </div>
+        </div>
+        <div class="row container">
+            <div class="col s6">
+                <label for="cantidad por porcion">Cantidad por porcion (gramos)</label>
+                <input type="number" class="validate" id="porcion" name="CANTIDADPORCION">
+            </div>
+            <div class="col s6">
+                <textarea id="descripcion" class="materialize-textarea" name="DESCRIPCIONPRODUCTO"></textarea>
+                <label for="descripcion del producto">descripcion del producto</label>
+            </div>
+        </div>
+        <div class="row container center-align">
+            <div class="col s6">
+                <button class="btn red darken-3" id="agregar">agregar</button>
+            </div>
+
+
+        </div>
+       
+        </div>
+    </form>
+</div>
+
