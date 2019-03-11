@@ -16,7 +16,7 @@ router.get('/CreateUser', isLoggedIn, (req, res) => {
 });
 
 router.post('/CreateUser', passport.authenticate('local', {
-    successRedirect: '/Login',
+    successRedirect: '/links/menuPrincipal',
     failureRedirect: '/CreateUser',
     failureFlash: true
 }));

@@ -16,6 +16,7 @@ passport.use('Login', new LocalStrategy({
       console.log(Contrasena);
       console.log(user.CONTRASENA);
       if (validPassword) {
+        done(null, user, req.flash('success', 'Bienvenido ' + user.NOMBRE + " " + user.APELLIDO));
       } else {
         done(null, false, req.flash('mensaje', 'Contraseña Incorrecta.'));
       }
@@ -29,7 +30,7 @@ passport.use('local', new LocalStrategy({
     usernameField: 'Identificacion',
     passwordField: 'Contrasena',
     passReqToCallback: true
-}, async (req, Identificacion, Contrasena, done) => {
+}, async (req, Identificacion, Contrasena) => {
     const {
         Nombre,
         Apellido,
@@ -63,10 +64,11 @@ passport.use('local', new LocalStrategy({
     RegisterUser.Contrasena = await helpers.encryptPassword(Contrasena);
 
     const resultado = await pool.query('INSERT INTO empleado set ?', [RegisterUser]);
-    RegisterUser.Id = resultado.insertId;
-    return done(null, RegisterUser);
+    /*RegisterUser.Id = resultado.insertId;
+    return done(null, RegisterUser);*/
 
 }));
+
 
 passport.serializeUser((user, done) => {
     done(null, user.ID);
