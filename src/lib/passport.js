@@ -24,9 +24,8 @@ passport.use('Login', new LocalStrategy({
       return done(null, false, req.flash('mensaje', 'El empleado no existe.'));
     }
   }));
-  
-
-passport.use('local', new LocalStrategy({
+ 
+/*passport.use('local', new LocalStrategy({
     usernameField: 'Identificacion',
     passwordField: 'Contrasena',
     passReqToCallback: true
@@ -64,11 +63,11 @@ passport.use('local', new LocalStrategy({
     RegisterUser.Contrasena = await helpers.encryptPassword(Contrasena);
 
     const resultado = await pool.query('INSERT INTO empleado set ?', [RegisterUser]);
-    /*RegisterUser.Id = resultado.insertId;
-    return done(null, RegisterUser);*/
+    RegisterUser.Id = resultado.insertId;
+    return done(null, RegisterUser);
 
 }));
-
+*/
 
 passport.serializeUser((user, done) => {
     done(null, user.ID);

@@ -11,15 +11,12 @@ router.get('/Login', (req, res) => {
     res.render('links/Login');
 });
 
-router.get('/CreateUser', isLoggedIn, (req, res) => {
-    res.render('links/CreateUser');
-});
 
-router.post('/CreateUser', passport.authenticate('local', {
+/*router.post('/CreateUser', passport.authenticate('local', {
     successRedirect: '/links/menuPrincipal',
     failureRedirect: '/CreateUser',
     failureFlash: true
-}));
+}));*/
 
 
 router.post('/Login', (req, res, next) => {

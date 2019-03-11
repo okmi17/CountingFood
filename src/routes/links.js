@@ -6,6 +6,8 @@ const pool = require('../database');
 const {
     isLoggedIn
 } = require('../lib/auth');
+const helpers = require('../lib/helpers');
+
 
 
 
@@ -75,6 +77,46 @@ router.post('/Edit/:IDENTIFICACION', async (req, res) => {
 
 });
 
+ 
+
+router.post('/CreateUser', async (req,res)=>{
+    const {   
+                Identificacion,
+                Contrasena, 
+                Nombre, 
+                Apellido,
+                FechadeNacimiento,
+                Edad,
+                Correo,
+                SueldoBasico,
+                Pensiones,
+                Cesantias,
+                EPS,
+                Cargo,
+                FechaIngreso
+            } = req.body;
+    const RegisterUser = 
+    {
+        Identificacion,
+        Nombre, 
+        Apellido,
+        Edad,
+        FechadeNacimiento,
+        Correo,
+        SueldoBasico,
+        Contrasena, 
+        Pensiones,
+        EPS,
+        Cargo,
+        FechaIngreso,
+        Cesantias
+
+    };
+    RegisterUser.Contrasena = await helpers.encryptPassword(Contrasena);
+    await pool.query('INSERT INTO empleado set ?',[RegisterUser]);
+    res.redirect('CreateUser');
+  
+});
 
 router.get('/inventario', isLoggedIn, async (req, res) => {
     const productos = await pool.query('SELECT * FROM PRODUCTO');
@@ -84,6 +126,11 @@ router.get('/inventario', isLoggedIn, async (req, res) => {
         productos
     });
 
+});
+
+
+router.get('/CreateUser', isLoggedIn, (req, res) => {
+    res.render('links/CreateUser');
 });
 
 router.post('/inventario', async (req, res) => {
