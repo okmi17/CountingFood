@@ -16,7 +16,6 @@ passport.use('Login', new LocalStrategy({
       console.log(Contrasena);
       console.log(user.CONTRASENA);
       if (validPassword) {
-        done(null, user, req.flash('success', 'Bienvenido ' + user.NOMBRE + " " + user.APELLIDO));
       } else {
         done(null, false, req.flash('mensaje', 'Contraseña Incorrecta.'));
       }
