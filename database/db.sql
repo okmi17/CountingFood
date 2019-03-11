@@ -1,9 +1,14 @@
 CREATE DATABASE Restaurante;
 
 USE Restaurante;
+/*==============================================================*/
+/* DBMS name:      MySQL 5.0                                    */
+/* Created on:     13/01/2019 11:33:37 p. m.                    */
+/*==============================================================*/
 
 create table EMPLEADO
 (
+   ID                   int not null AUTO_INCREMENT,                
    IDENTIFICACION       int not null,
    NOMBRE               varchar(100)  null,
    APELLIDO             varchar(100)  null,
@@ -17,7 +22,8 @@ create table EMPLEADO
    CARGO                varchar(100) not null,
    FECHAINGRESO         date  null,
    CESANTIAS            varchar(100) null,
-   primary key (IDENTIFICACION, CARGO)
+   primary key (IDENTIFICACION, CARGO),
+   key(ID)
 );
 
 /*==============================================================*/
@@ -109,7 +115,7 @@ create table PLATO
 /*==============================================================*/
 create table PLATOPRODUCTO
 (
-   IDPRODUCTO           varchar(30) not null,
+   IDPRODUCTO           int not null,
    IDPLATO              int not null,
    CANTIDADPORCION      decimal not null,
    primary key (IDPRODUCTO, IDPLATO)
@@ -160,6 +166,12 @@ create table TURNO
    HORASTRABAJADAS      int,
    primary key (IDTURNO)
 );
+
+/*alter table EMPLEADO
+  modify ID int not null AUTO_INCREMENT primary key, AUTO_INCREMENT = 2;*/
+
+alter table PRODUCTO
+    modify  IDPRODUCTO  int not null AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 alter table FACTURA add constraint FK_FACTURAR foreign key (IDENTIFICACION, CARGO)
       references EMPLEADO (IDENTIFICACION, CARGO) on delete restrict on update restrict;

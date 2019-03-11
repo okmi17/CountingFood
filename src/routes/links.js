@@ -4,13 +4,6 @@ const router = express.Router();
 //pool hace referencia a la conexion a la bd
 const pool = require('../database');
 
-router.get('/Login',(req,res)=>{
-    res.render('links/Login');
-});
-
-router.get('/CreateUser',(req,res)=>{
-    res.render('links/CreateUser');
-});
 
 router.get('/ListEmployees',async (req,res) => {
     const empleados =  await pool.query('SELECT * FROM empleado');
@@ -18,57 +11,9 @@ router.get('/ListEmployees',async (req,res) => {
 });
 
 
-router.post('/Login', async (req,res)=>{
-    const {IDENTIFICACION, CARGO} = req.body;
-    const LoginUser = {
-        IDENTIFICACION,
-        CARGO
-    };
-    await pool.query('INSERT INTO EMPLEADO set ?',[LoginUser]);
-    res.send('reiceved');   
-});
 router.post('/ListEmployees', async (req,res)=>{
     const Hola = req.params.id;
 
-});
-
-
-router.post('/CreateUser', async (req,res)=>{
-    const {   
-                Identificacion,
-                Contrasena, 
-                Nombre, 
-                Apellido,
-                FechadeNacimiento,
-                Edad,
-                Correo,
-                SueldoBasico,
-                Pensiones,
-                Cesantias,
-                EPS,
-                Cargo,
-                FechaIngreso
-            } = req.body;
-    const RegisterUser = 
-    {
-        Identificacion,
-        Nombre, 
-        Apellido,
-        Edad,
-        FechadeNacimiento,
-        Correo,
-        SueldoBasico,
-        Contrasena, 
-        Pensiones,
-        EPS,
-        Cargo,
-        FechaIngreso,
-        Cesantias
-
-    };
-    await pool.query('INSERT INTO empleado set ?',[RegisterUser]);
-    res.redirect('CreateUser');
-  
 });
 
 
@@ -107,7 +52,7 @@ router.post('/edit/:id', async (req,res)=>{
 
     };
     pool.query('UPDATE empleado set ? WHERE IDENTIFICACION = ?',[RegisterUser,IDENTIFICACION]);
-    res.redirect('/links/ListEmployees');
+    res.redirect('/ListEmployees');
   
 });
 
@@ -118,7 +63,7 @@ router.get('/inventario', async (req, res) => {
    
     res.render('links/inventario', { productos });
 
-})
+});
 
 router.post('/inventario', async (req, res) => {
 
@@ -129,7 +74,7 @@ router.post('/inventario', async (req, res) => {
 
     res.render('links/inventario', { productos });
 
-})
+});
 //------------------------------------------------------------------------------
 router.post('/buscarTipo', async (req, res) => {
 
@@ -140,17 +85,18 @@ router.post('/buscarTipo', async (req, res) => {
 
     res.render('links/inventario', { tipoProductos });
 
-})
+});
 
 
 //------------------------------------------------------------------------------
 //para cuando el navegador pida una peticion get al servidor
 router.get('/agregarProducto', (req, res) => {//add
     res.render('links/agregarProducto');
-})
+});
+
 router.get('/menuPrincipal', (req, res) => {//add
     res.render('links/menuPrincipal');
-})
+});
 router.post('/agregarProducto', async (req, res) => {
     //req.body me dice que datos esta recibiendo el servidor
     //console.log(req.body);
