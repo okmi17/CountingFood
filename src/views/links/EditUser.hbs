@@ -3,9 +3,9 @@
         <div class="nav-wrapper container">
             <a class="brand-logo">Editar Empleado</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="menuPrincipal.html">MENÚ PRINCIPAL</a></li>
+                <li><a href="/links/menuPrincipal">MENÚ PRINCIPAL</a></li>
                 <li><a href="/links/ListEmployees">LISTA DE EMPLEADOS</a></li>
-                <li><a href="/links/Login">CERRAR SESIÓN</a></li>
+                <li><a href="/Logout">CERRAR SESIÓN</a></li>
             </ul>
         </div>
     </nav>
@@ -18,19 +18,19 @@
 <form action="/links/Edit/{{data.IDENTIFICACION}}" method="POST">
 <div class="row container" id="firstDiv">
     <div class="input-field col s4">
-        <input type="email" value="{{data.CORREO}}" name="Correo" class="validate">
+        <input type="email" value="{{data.CORREO}}" name="CORREO" class="validate">
         <label for="Correo">Correo</label>
     </div>
     <div class="input-field col s4">
-        <input type="text" value="{{data.SUELDOBASICO}}" name="SueldoBasico" class="validate">
+        <input type="text" value="{{data.SUELDOBASICO}}" name="SUELDOBASICO" class="validate">
         <label for="Sueldo">Sueldo</label>
     </div>
     <div class="input-field col s4">
-        <input type="text" value="{{data.PENSIONES}}" name="Pensiones" class="validate">
+        <input type="text" value="{{data.PENSIONES}}" name="PENSIONES" class="validate">
         <label for="Pensiones">Pensiones</label>
     </div>
     <div class="input-field col s4">
-        <input type="text" value="{{data.CESANTIAS}}" name="Cesantias" class="validate">
+        <input type="text" value="{{data.CESANTIAS}}" name="CESANTIAS" class="validate">
         <label for="Cesantias">Cesantias</label>
     </div>
     <div class="input-field col s4">
@@ -38,7 +38,7 @@
         <label for="EPS">EPS</label>
     </div>
     <div class="input-field col s4">
-        <input type="text" value="{{data.CARGO}}" name="Cargo" class="validate">
+        <input type="text" value="{{data.CARGO}}" name="CARGO" class="validate">
         <label for="Cargo">Cargo</label>
     </div>
 </div>

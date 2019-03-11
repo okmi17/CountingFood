@@ -2,14 +2,16 @@ const express = require('express');
 const router = express.Router();
 
 const passport = require('passport');
-//const { isLoggedIn } = require('../lib/auth');
+const {
+    isLoggedIn
+} = require('../lib/auth');
 
 
 router.get('/Login', (req, res) => {
     res.render('links/Login');
 });
 
-router.get('/CreateUser', (req, res) => {
+router.get('/CreateUser', isLoggedIn, (req, res) => {
     res.render('links/CreateUser');
 });
 
@@ -21,18 +23,15 @@ router.post('/CreateUser', passport.authenticate('local', {
 
 
 router.post('/Login', (req, res, next) => {
-    /*req.check('Identificacion', 'Username is Required').notEmpty();
-    req.check('Contrasena', 'Password is Required').notEmpty();
-    const errors = req.validationErrors();
-    if (errors.length > 0) {
-        req.flash('message', errors[0].msg);
-        res.redirect('/Login');
-    }*/
     passport.authenticate('Login', {
-        successRedirect: '/menuPrincipal',
+        successRedirect: 'links/menuPrincipal',
         failureRedirect: '/Login',
         failureFlash: true
     })(req, res, next);
 });
 
+router.get('/Logout', isLoggedIn, (req, res) => {
+    req.logOut();
+    res.redirect('/Login');
+});
 module.exports = router;

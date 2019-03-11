@@ -16,12 +16,12 @@ passport.use('Login', new LocalStrategy({
       console.log(Contrasena);
       console.log(user.CONTRASENA);
       if (validPassword) {
-        done(null, user, req.flash('success', 'Bienvenido ' + user.IDENTIFICACION));
+        done(null, user, req.flash('success', 'Bienvenido ' + user.NOMBRE + " " + user.APELLIDO));
       } else {
-        done(null, false, req.flash('message', 'Contraseña Incorrecta.'));
+        done(null, false, req.flash('mensaje', 'Contraseña Incorrecta.'));
       }
     } else {
-      return done(null, false, req.flash('message', 'El empleado no existe.'));
+      return done(null, false, req.flash('mensaje', 'El empleado no existe.'));
     }
   }));
   
